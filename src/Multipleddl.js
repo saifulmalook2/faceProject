@@ -1,6 +1,8 @@
 import React from 'react';
 import Select from 'react-select';
 import Image from './imagecard.js'
+import img from './images/000001.jpg'
+import Navbar from './components/NavBar/NavBar.js';
 
 
 function Multipleddl()
@@ -48,7 +50,35 @@ function Multipleddl()
         {"value":40,"label":"Young"}
     ];
 
+    
     //var [Displayvalue, getvalue] = useState();
+    
+    // const getSearch = (data)=> {
+    //     console.log(data);
+    //     let config = {
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       },
+    //     }
+    //       axios.post(`http://localhost:8080/faces/api/v1/search`, data, config)
+    //         .then(res => {
+    //           console.log(res.data);
+
+    //           let double1 = res.data.map(function(at){
+    //             return {id: at , img: at}
+    //         })
+        
+    //         console.log(double1)
+
+    //         let results = double1.map((imag) =>{
+    //             return (
+    //                 <Image key={imag.id} img = {imag.img}/>
+    //             )
+    //         })
+            
+
+    //         })
+    //   }
 
     var Ddlhandle = (e)=>
     {
@@ -57,7 +87,8 @@ function Multipleddl()
         for(let i =0; i < e.length; i++)
         {
             att.push(e[i].label)
-        }        
+        }  
+        //getSearch(att)
         console.log(att)
 
         //send this list to backend
@@ -66,20 +97,28 @@ function Multipleddl()
         //on that map call the imagecard class/component and display the images
     }
     return(
+      
 
-        <div >
-            <Select isMulti options= {Attnames} onChange={Ddlhandle}></Select>
+        <div  >
+
+            <Navbar />
+       
+            <div  style ={{width:400, color: "red", accentColor: "orange", animation: "ease-in", animationDelay:50, alignItems:true}}>
+            <Select isMulti options= {Attnames} onChange={Ddlhandle} ></Select>
+            </div>
             
-            <div  className='contacts'>
-                <Image/>
-                <Image/>
-                <Image/>
-                <Image/>
-                <Image/>
-                <Image/>
-                <Image/>
-                <Image/>
-                <Image/>
+            
+            <div  className='img-grid'>
+              <Image id = {img} img ={img} />
+              <Image id = {img} img ={img} />
+              <Image id = {img} img ={img} />
+              <Image id = {img} img ={img} />
+              <Image id = {img} img ={img} />
+              <Image id = {img} img ={img} />
+              <Image id = {img} img ={img} />
+              <Image id = {img} img ={img} />
+              <Image id = {img} img ={img} />
+              <Image id = {img} img ={img} />  
             </div>
 
         </div>

@@ -12,16 +12,22 @@ code {
     monospace;
 }
 
-.contacts {
+.img-grid {
   display: flex;
   flex-wrap: wrap;
 }
-.contact-card {
-  flex-basis: 250px;
-  margin: 20px;
+.img-card {
+  flex-basis: 150px;
+  margin: 7px;
+}
+.select {
+  flex-basis: 150px;
+  margin: 7px;
+  
 }
 
-.contact-card > img {
+
+.img-card > img {
   width: 100%;
   height: auto;
 }
